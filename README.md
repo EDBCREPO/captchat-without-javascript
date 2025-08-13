@@ -1,4 +1,3 @@
-# Convo-Dcaptchat
-Simple captchat that does not require JS to work
+# captchat-without-javascript
 
-[Videograbación 2025-01-10 17_08_40.webm](https://github.com/user-attachments/assets/6370cbaf-66e6-47cf-b41c-0d208cfc2eac)
+![ezgif-52788b1f66b48f](https://github.com/user-attachments/assets/cd59098c-9362-427f-a3b1-528eb0474e4b)
