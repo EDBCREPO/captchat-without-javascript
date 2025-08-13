@@ -1,6 +1,13 @@
 export LD_LIBRARY_PATH=./lib
 
-g++ -o main main.cpp -I./Modules -L./lib -lraylib -lssl -lcrypto -lz
+if [ ! -d "Build" ]; then
+     mkdir "Build"
+fi
 
-#./main ?mode=generator
-./main ?mode=server
+g++ -o ./Build/main ./Service/main.cpp -I./Modules -L./lib -lraylib -lssl -lcrypto -lz
+
+echo -e "generating captchat \n"
+./Build/main ?mode=generator
+
+echo -e "testing captchat \n"
+./Build/main ?mode=server
