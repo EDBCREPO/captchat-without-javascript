@@ -1,6 +1,14 @@
-export LD_LIBRARY_PATH=./lib
+mkdir -p build
 
-g++ -o main main.cpp -I./Modules -L./lib -lraylib -lssl -lcrypto -lz
+if [ ! -d "./build/_deps" ]; then
+   ( cd build ; cmake .. )
+fi
 
-#./main ?mode=generator
-./main ?mode=server
+( cd build ; make )
+
+if [ ! $? -eq 0 ]; then
+    echo "exit error"; exit;
+fi
+
+./build/main ?mode=generator
+./build/main ?mode=server

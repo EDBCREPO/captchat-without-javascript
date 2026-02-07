@@ -3,27 +3,42 @@
     <head>
         <meta charset="UTF-8"> <title> captchat </title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="/assets/css/captchat_data.css">
         <link rel="stylesheet" href="/assets/css/uikit.css">
     </head>
 
     <body class="uk-height-expand uk-flex uk-flex-center uk-flex-middle 
                  uk-padding-small uk-background-primary">
 
-        <° http://localhost:8000/captchat °>
-
-        <style>
-
-            img { 
-                transform: scale(6) translate( calc( -3px * 42 ), calc( -2px * 45 ) );
-                transform-origin: 0px 0px; image-rendering: pixelated; 
-                transition: all 0.3s ease-out;
-            }
-
-            [captchat] label:has(input:checked) + label { display: flex !important; }
-
-            input[type="text"]:focus { border-color: var(--primary); }
-
-        </style>
+            <div style="left:0px; top:0px; position:absolute;" toggle="!1"
+                 class="uk-background-dark uk-flex uk-flex-center
+                        uk-height-expand uk-inline uk-flex-middle
+                        uk-flex-column-reverse" >
+            
+            <form class="uk-child-width-1-1 uk-flex uk-flex-center uk-flex-wrap
+                        uk-width-1-1@s uk-width-2-3 uk-inline
+                        uk-padding uk-rounded uk-gap"
+                  action="/" method="POST" captchat >
+                        
+                <° CAPTCHAT °>
+            
+                <button class="uk-button uk-button-primary uk-icon 
+                               uk-width-1-1 uk-h1" type="submit"
+                > DONE </button>
+            
+                <div class="uk-text-center uk-text-neutral"> 
+                    🤖 Only Alphabets - [a-z] - No Numbers 🤖 
+                </div>
+            
+            </form><style>
+            
+                [captchat] label:has(input:checked) + label { display: flex !important; }
+                [captchat]:hover [content]>[img], [captchat]:hover [content]
+                { transition: all 0.3s ease-out; }
+            
+                input[type="text"]:focus { border-color: var(--primary); }
+            
+            </style></div>
 
     </body>
 

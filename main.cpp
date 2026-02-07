@@ -1,4 +1,6 @@
 #include <nodepp/nodepp.h>
+#include <express/http.h>
+#include <jwt/jwt.h>
 
 using namespace nodepp;
 
@@ -8,6 +10,7 @@ using namespace nodepp;
 void onMain() { process::env::init(".env");
 
     if( process::env::get("mode") == "generator" )
-      { generator(); } else { server(); }  
+      { controller::generator(); } 
+  else{ controller::server(); }  
 
 }
